@@ -1,0 +1,244 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '../../public/css/app.css';
+
+@keyframes purple-pulse {
+    0% { box-shadow: 0 0 0 0 $pu; }
+}
+@keyframes pink-pulse {
+    0% { box-shadow: 0 0 0 0 $pi; }
+}
+@keyframes yellow-pulse {
+    0% { box-shadow: 0 0 0 0 $ye; }
+}
+@keyframes green-pulse {
+    0% { box-shadow: 0 0 0 0 $gr; }
+}
+@keyframes cyan-pulse {
+    0% { box-shadow: 0 0 0 0 $cy; }
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    canvas {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+    }
+    // button colors
+    .purple {
+        @extend %purple;
+        transform: rotate(-3deg);
+        &:focus {
+            animation: purple-pulse 1s;
+            box-shadow: 0 0 0 2em rgba(#fff,0);
+            outline: none;
+            border: 2px solid $lpu;
+            color: $lpu;
+        }
+    }
+    .pink {
+        @extend %pink;
+        transform: rotate(-3deg);
+        &:focus {
+            animation: pink-pulse 1s;
+            box-shadow: 0 0 0 2em rgba(#fff,0);
+            outline: none;
+            border: 2px solid $lpi;
+            color: $lpi;
+        }
+    }
+    .yellow {
+        color: $ye;
+        transform: rotate(-3deg);
+        &:hover {
+            cursor: pointer;
+            color: $lye;
+            border: 2px solid $lye;
+        }
+        &:focus {
+            animation: yellow-pulse 1s;
+            box-shadow: 0 0 0 2em rgba(#fff,0);
+            outline: none;
+            border: 2px solid $lye;
+            color: $lye;
+        }
+    }
+    .green {
+        @extend %green;
+        transform: rotate(-3deg);
+        &:focus {
+            animation: green-pulse 1s;
+            box-shadow: 0 0 0 2em rgba(#fff,0);
+            outline: none;
+            border: 2px solid $lgr;
+            color: $lgr;
+        }
+    }
+    .cyan {
+        @extend %cyan;
+        transform: rotate(-3deg);
+        &:focus {
+            animation: cyan-pulse 1s;
+            box-shadow: 0 0 0 2em rgba(#fff,0);
+            outline: none;
+            border: 2px solid $lcy;
+        }
+    }
+    //
+    .thumbnail-hover {
+        opacity: 0.6;
+    }
+    .thumbnail-link-hover {
+        z-index: 3;
+    }
+    .content {
+        position: absolute;
+        z-index: 2;
+        padding: 50px;
+        .languages {
+            color: $white;
+            .language-option {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .language {
+                width: 25%;
+                margin-left: 15%;
+                margin-top: 10px;
+                border: none;
+                padding: 0;
+                @extend %no-outline;
+                img {
+                    width: 100%;
+                }
+            }
+            .active-language {
+                display: inline-block !important;
+            }
+            .inactive-language {
+                display: none;
+            }
+            .fa-chevron-down {
+                position: absolute;
+                margin-top: 20px;
+            }
+            .seperator {
+                display: none;
+            }
+        }
+        .title {
+            h1 {
+                padding: 10px;
+                @extend %font-logo;
+                color: white !important;
+            }
+        }
+        .nav {
+            font-size: 17px;
+            ul {
+                width: 100%;
+                @extend %lst;
+                justify-content: flex-end;
+                li {
+                    @extend %inline;
+                    margin-right: 1%;
+                    margin-top: 13px;
+                }
+            }
+        }
+        .projects {
+            margin-top: 100px;
+            flex-wrap: wrap;
+            .project {
+              @extend %showcase;
+                .project-date {
+                    @extend %showcase-date;
+                }
+                .layout {
+                    margin-left: 83px;
+                }
+                .styling {
+                    margin-left: 125px;
+                }
+                .interface {
+                    margin-left: 202px;
+                }
+                .animations {
+                    margin-left: 86px;
+                }
+                .php {
+                    margin-left: 149px;
+                }
+                .database {
+                    margin-left: 130px;
+                }
+                .date-project {
+                    margin-left: 175px;
+                }
+                .date-yellow {
+                    color: $ye;
+                }
+                .date-green {
+                    color: $gr;
+                }
+                .date-cyan {
+                    color: $cy;
+                }
+                .project-title {
+                    @extend %showcase-title;
+                }
+                .title-yellow {
+                    background-color: $ye;
+                }
+                .title-green {
+                    background-color: $gr;
+                }
+                .title-cyan {
+                    background-color: $cy;
+                }
+                .project-thumbnail {
+                    margin-top: 20px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    .vignette {
+                        z-index: 4;
+                    }
+                    .thumbnail {
+                        z-index: 3;
+                        transition: all 0.3s ease;
+                    }
+                    .thumbnail-link {
+                        @extend %showcase-link;
+                    }
+                    .link-yellow {
+                        text-shadow: 0px 0px 20px $ye;
+                    }
+                    .link-green {
+                        text-shadow: 0px 0px 20px $gr;
+                    }
+                    .link-cyan {
+                        text-shadow: 0px 0px 20px $cy;
+                    }
+                    img {
+                        position: absolute;
+                        width: 404px;
+                    }
+                }
+                .project-content {
+                    @extend %showcase-content;
+                }
+            }
+        }
+    }
+}
